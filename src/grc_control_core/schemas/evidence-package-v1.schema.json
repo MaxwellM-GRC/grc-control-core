@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MaxwellM-GRC/grc-control-core/schemas/evidence-package-v1.schema.json",
+  "title": "GRC Evidence Package v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "run_id", "generated_at", "control", "sources", "population",
+    "findings", "evaluation_status", "integrity_errors"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^1\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+    "run_id": { "type": "string", "pattern": "\\S" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "control": { "$ref": "control-metadata-v1.schema.json" },
+    "sources": { "type": "array", "items": { "$ref": "source-provenance-v1.schema.json" } },
+    "population": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authoritative_population", "evaluated_population", "authoritative_count", "evaluated_count",
+        "missing_keys", "unexpected_keys", "duplicate_authoritative_keys", "duplicate_evaluated_keys", "reconciled"
+      ],
+      "properties": {
+        "authoritative_population": { "type": "string", "pattern": "\\S" },
+        "evaluated_population": { "type": "string", "pattern": "\\S" },
+        "authoritative_count": { "type": "integer", "minimum": 0 },
+        "evaluated_count": { "type": "integer", "minimum": 0 },
+        "missing_keys": { "$ref": "#/$defs/stringArray" },
+        "unexpected_keys": { "$ref": "#/$defs/stringArray" },
+        "duplicate_authoritative_keys": { "$ref": "#/$defs/stringArray" },
+        "duplicate_evaluated_keys": { "$ref": "#/$defs/stringArray" },
+        "reconciled": { "type": "boolean" }
+      }
+    },
+    "findings": { "type": "array", "items": { "$ref": "finding-v1.schema.json" } },
+    "evaluation_status": { "enum": ["complete", "blocked"] },
+    "integrity_errors": { "$ref": "#/$defs/stringArray" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "evaluation_status": { "const": "complete" } } },
+      "then": {
+        "properties": {
+          "integrity_errors": { "maxItems": 0 },
+          "population": { "properties": { "reconciled": { "const": true } } }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "evaluation_status": { "const": "blocked" } } },
+      "then": {
+        "properties": {
+          "integrity_errors": { "minItems": 1 },
+          "findings": { "maxItems": 0 }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "stringArray": { "type": "array", "items": { "type": "string" } }
+  }
+}

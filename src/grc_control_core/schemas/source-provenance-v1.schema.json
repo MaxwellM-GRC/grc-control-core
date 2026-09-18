@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MaxwellM-GRC/grc-control-core/schemas/source-provenance-v1.schema.json",
+  "title": "GRC Source Provenance v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "source_id", "source_uri", "query", "extracted_at",
+    "review_period_start", "review_period_end", "record_count", "content_sha256", "collected_by"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^1\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+    "source_id": { "type": "string", "pattern": "\\S" },
+    "source_uri": { "type": "string", "pattern": "\\S" },
+    "query": { "type": "string", "pattern": "\\S" },
+    "extracted_at": { "type": "string", "format": "date-time" },
+    "review_period_start": { "type": "string", "format": "date" },
+    "review_period_end": { "type": "string", "format": "date" },
+    "record_count": { "type": "integer", "minimum": 0 },
+    "content_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "collected_by": { "type": "string", "pattern": "\\S" }
+  }
+}

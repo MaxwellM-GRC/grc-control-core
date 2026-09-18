@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MaxwellM-GRC/grc-control-core/schemas/control-metadata-v1.schema.json",
+  "title": "GRC Control Metadata v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "catalog_version", "control_id", "name", "risk_category",
+    "risk", "control_description", "objective", "population", "evidence",
+    "exception_response", "rules"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^1\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+    "catalog_version": { "$ref": "#/$defs/semver" },
+    "control_id": { "type": "string", "pattern": "^ITGC-[A-Z][A-Z0-9]*-[0-9]{2,3}$" },
+    "name": { "$ref": "#/$defs/nonBlank" },
+    "risk_category": {
+      "enum": ["logical_access", "change_management", "it_operations", "security_configuration", "third_party_risk", "system_development"]
+    },
+    "risk": { "type": "string", "pattern": "^Failure to .+" },
+    "control_description": { "type": "string", "pattern": "^Management performs .+" },
+    "objective": { "$ref": "#/$defs/nonBlank" },
+    "population": { "$ref": "#/$defs/nonBlank" },
+    "evidence": { "$ref": "#/$defs/nonBlank" },
+    "exception_response": { "$ref": "#/$defs/response" },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/rule" }
+    }
+  },
+  "$defs": {
+    "nonBlank": { "type": "string", "pattern": "\\S" },
+    "semver": { "type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?$" },
+    "severity": { "enum": ["info", "low", "medium", "high", "critical"] },
+    "response": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["remediation", "mitigation", "root_cause", "closure_evidence", "escalation"],
+      "properties": {
+        "remediation": { "$ref": "#/$defs/nonBlank" },
+        "mitigation": { "$ref": "#/$defs/nonBlank" },
+        "root_cause": { "$ref": "#/$defs/nonBlank" },
+        "closure_evidence": { "$ref": "#/$defs/nonBlank" },
+        "escalation": { "$ref": "#/$defs/nonBlank" }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule_id", "assertion", "severity"],
+      "properties": {
+        "rule_id": { "type": "string", "pattern": "^[A-Z][A-Z0-9]*-[0-9]{2}$" },
+        "assertion": { "$ref": "#/$defs/nonBlank" },
+        "severity": { "$ref": "#/$defs/severity" }
+      }
+    }
+  }
+}
