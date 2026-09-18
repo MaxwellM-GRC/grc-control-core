@@ -2,6 +2,11 @@
 
 All notable changes are documented here. This project follows Semantic Versioning.
 
+## 0.1.1 - 2026-09-17
+
+- Add the shared portfolio glossary for plain language assurance terminology.
+- Update core README language to use the glossary's auditor friendly terms.
+
 ## 0.1.0 - 2026-09-17
 
 - Add versioned control metadata, finding, provenance, reconciliation, exception case, and evidence package models.

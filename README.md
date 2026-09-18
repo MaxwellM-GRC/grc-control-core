@@ -2,9 +2,10 @@
 
 [![CI](https://github.com/MaxwellM-GRC/grc-control-core/actions/workflows/ci.yml/badge.svg)](https://github.com/MaxwellM-GRC/grc-control-core/actions/workflows/ci.yml)
 
-Shared Python primitives that can be reused across the Automated GRC POC portfolio.
-The package makes evidence contracts consistent without centralizing the rules,
-adapters, or narratives that make each POC independent and understandable.
+Shared Python building blocks for the Automated GRC POC portfolio. The package
+makes evidence contracts consistent without centralizing the rules, adapters,
+or narratives that make each POC independent and understandable. Shared terms
+are defined in the [portfolio glossary](docs/glossary.md).
 
 This repository is the distribution source. **The package is not published to
 PyPI.** Portfolio repositories consume a reviewed GitHub release tag such as
@@ -12,10 +13,11 @@ PyPI.** Portfolio repositories consume a reviewed GitHub release tag such as
 
 ## What belongs here
 
-- versioned control metadata, finding, provenance, and evidence package models;
-- CSV/JSON input integrity validation that fails closed;
-- complete population reconciliation;
-- deterministic finding IDs and severity helpers;
+- versioned control metadata, finding, evidence source detail, and evidence
+  package models;
+- CSV/JSON evidence validation that stops when inputs cannot be verified;
+- complete population checks;
+- consistent finding identifiers and severity helpers;
 - an exception case lifecycle that requires human approval;
 - deterministic JSON, CSV, and Markdown rendering;
 - configuration and control-language validation; and
@@ -77,14 +79,14 @@ finding_id = stable_finding_id(
 See [`examples/basic_usage.py`](examples/basic_usage.py) for a complete evidence
 package that is not specific to a control.
 
-## Behavior that fails closed
+## Evidence validation behavior
 
 `validate_source` checks exact file bytes, retained row counts, required fields,
 blank values, and duplicate primary keys. `reconcile_population` exposes missing,
 unexpected, and duplicate keys. An `EvidencePackage` cannot use `complete` status
-unless source provenance is present and the population reconciles; a `blocked`
-package cannot report control findings. Incomplete input therefore cannot look
-like a clean control result.
+unless evidence source details are present and the population reconciles; a
+`blocked` package cannot report control findings. Incomplete input therefore
+cannot look like a clean control result.
 
 Automation may open and route an exception case. `close_exception_case` requires
 a remediation record, mitigation/lookback, root cause, closure evidence, an
