@@ -21,7 +21,8 @@ PyPI.** Portfolio repositories consume a reviewed GitHub release tag such as
 - an exception case lifecycle that requires human approval;
 - deterministic JSON, CSV, and Markdown rendering;
 - configuration and control-language validation; and
-- bundled Draft 2020-12 JSON Schemas and contract conformance tests.
+- bundled Draft 2020-12 JSON Schemas and contract conformance tests; and
+- shared product-governance templates that POCs complete locally.
 
 ## What deliberately does not belong here
 
@@ -33,6 +34,14 @@ PyPI.** Portfolio repositories consume a reviewed GitHub release tag such as
 
 Those boundaries keep POCs independently reviewable and prevent a shared
 library from becoming an opaque policy engine.
+
+## Product-governance templates
+
+The core repository also maintains reusable templates for portfolio governance.
+They are not part of the installed Python package or a POC's evidence package.
+Each POC completes its own copy so its product owner, adopting function,
+company operating model, assumptions, and success metrics remain reviewable in
+that POC. Start with [the POC product brief template](templates/poc_product_brief.md).
 
 ## Install from a pinned GitHub release
 
