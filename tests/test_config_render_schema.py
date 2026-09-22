@@ -114,7 +114,7 @@ class RenderingTests(unittest.TestCase):
 
 class SchemaTests(unittest.TestCase):
     def test_all_published_schemas_are_valid_json_with_ids(self) -> None:
-        self.assertEqual(len(SCHEMAS), 4)
+        self.assertEqual(len(SCHEMAS), 5)
         for name in SCHEMAS:
             schema = load_schema(name)
             self.assertEqual(schema["$schema"], "https://json-schema.org/draft/2020-12/schema")

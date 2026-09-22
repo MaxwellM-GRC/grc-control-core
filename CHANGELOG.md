@@ -2,6 +2,13 @@
 
 All notable changes are documented here. This project follows Semantic Versioning.
 
+## 0.2.0 - 2026-09-22
+
+- Add a versioned framework-mapping schema and canonical POC mapping template.
+- Add governance for keeping the product brief, framework mapping, and detailed
+  RCM/evidence documentation aligned.
+- Add a concise Framework fit section to the shared product-brief template.
+
 ## 0.1.1 - 2026-09-17
 
 - Add the shared portfolio glossary for plain language assurance terminology.

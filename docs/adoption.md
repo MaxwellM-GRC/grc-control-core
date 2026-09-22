@@ -56,3 +56,12 @@ Open one reviewed dependency PR per POC when moving to a newer release tag. Read
 the changelog, confirm the compatibility table, run package contract tests plus
 the POC's tests, inspect representative evidence diffs, and record approval. Do
 not use floating branches, tag ranges, or automated major version upgrades.
+
+## 5. Adopt framework-mapping governance
+
+For a POC using the product-brief and framework-mapping contract, upgrade to
+`v0.2.0` or later. Copy `templates/framework_mapping.json` into the POC root,
+complete it from authoritative framework sources, and validate it against the
+bundled schema. Reference each mapping ID from the product brief, RCM narrative,
+and evidence contract as described in
+[`framework_mapping_governance.md`](framework_mapping_governance.md).

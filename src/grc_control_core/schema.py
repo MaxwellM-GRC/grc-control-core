@@ -12,6 +12,7 @@ SCHEMAS = frozenset(
         "finding-v1.schema.json",
         "source-provenance-v1.schema.json",
         "evidence-package-v1.schema.json",
+        "framework-mapping-v1.schema.json",
     }
 )
 

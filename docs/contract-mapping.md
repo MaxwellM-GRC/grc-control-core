@@ -21,6 +21,7 @@ are specific to a control into a shared policy engine.
 | Population reconciliation | `reconcile_population` with missing, unexpected, and duplicate keys |
 | Findings and closure evidence | `Finding`, `EvidenceReference`, response guidance, and exception cases |
 | Remediation and closure with human approval | explicit exception case state machine and closure requirements |
+| Framework claims across product, control, and evidence documents | `framework-mapping-v1.schema.json` and `docs/framework_mapping_governance.md` |
 
 ## Intentional boundary
 

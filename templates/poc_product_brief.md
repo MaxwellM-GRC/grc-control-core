@@ -26,7 +26,16 @@
 - **Expected value:**
 - **Material integration assumptions:**
 
-## 3. Company operating model
+## 3. Framework fit
+
+Summarize the canonical records in `framework_mapping.json`; do not create a
+separate free-form framework mapping here.
+
+| Mapping ID | Framework and reference | Why it fits | POC evidence | Remaining validation |
+|---|---|---|---|---|
+| `MAP-01` |  |  |  |  |
+
+## 4. Company operating model
 
 - **Automation does:**
 - **People decide:**
@@ -35,7 +44,7 @@
 Use distinct names for the product owner, control owner, system owner, and
 reviewer/approver when those roles are different.
 
-## 4. Proof plan
+## 5. Proof plan
 
 - **Success metrics:**
 - **Critical assumptions:**

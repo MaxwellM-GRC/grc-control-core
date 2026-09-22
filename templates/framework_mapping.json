@@ -1,0 +1,21 @@
+{
+  "$schema": "https://github.com/MaxwellM-GRC/grc-control-core/schemas/framework-mapping-v1.schema.json",
+  "schema_version": "1.0.0",
+  "control_id": "ITGC-XX-001",
+  "mappings": [
+    {
+      "mapping_id": "MAP-01",
+      "framework": "SOX ITGC",
+      "reference": "Company-selected ICFR scope and control framework",
+      "framework_source": "https://www.sec.gov/rules-regulations/2003/03/managements-report-internal-control-over-financial-reporting-certification-disclosure-exchange-act",
+      "applicability": "The control is in scope only when the adopting company determines the related system and risk support ICFR.",
+      "assertion_ids": ["XX-01"],
+      "evidence_outputs": ["control_evidence.json", "exceptions.csv", "cases/"],
+      "product_brief_summary": "The POC creates reproducible evidence for a company control assessment; it does not establish SOX compliance.",
+      "decision_status": "Proposed",
+      "remaining_validation": [
+        "Confirm company-specific ICFR scope, control ownership, and operating-effectiveness test approach."
+      ]
+    }
+  ]
+}

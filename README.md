@@ -41,7 +41,11 @@ The core repository also maintains reusable templates for portfolio governance.
 They are not part of the installed Python package or a POC's evidence package.
 Each POC completes its own copy so its product owner, adopting function,
 company operating model, assumptions, and success metrics remain reviewable in
-that POC. Start with [the POC product brief template](templates/poc_product_brief.md).
+that POC. Start with [the POC product brief template](templates/poc_product_brief.md)
+and [framework-mapping template](templates/framework_mapping.json). The
+[framework-mapping governance guide](docs/framework_mapping_governance.md)
+defines how the brief, detailed RCM/evidence documentation, and canonical
+mapping remain aligned.
 
 ## Install from a pinned GitHub release
 
@@ -107,7 +111,7 @@ Release `v0.1.0` supports:
 
 | Package | Schema family | Python | Portfolio catalog |
 |---|---|---|---|
-| `0.1.x` | `1.x` | 3.10–3.13 | `1.0.0` |
+| `0.2.x` | `1.x` | 3.10–3.13 | `1.0.0` |
 
 The implementation is governed by the portfolio's `docs/control_catalog.yaml`
 and `docs/control_language_standard.md`; human facing prose follows
