@@ -8,7 +8,7 @@ required, and existing local logic should be removed only after parity is tested
 Add this direct reference to the POC's `requirements.txt`:
 
 ```text
-grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.2.1
+grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.3.0
 ```
 
 For a POC with `pyproject.toml`, use:
@@ -16,7 +16,7 @@ For a POC with `pyproject.toml`, use:
 ```toml
 [project]
 dependencies = [
-  "grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.2.1",
+  "grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.3.0",
 ]
 ```
 
@@ -60,10 +60,9 @@ not use floating branches, tag ranges, or automated major version upgrades.
 ## 5. Adopt framework-mapping governance
 
 For a POC using the complete lean product-governance contract, upgrade to
-`v0.2.1` or later. Follow the six adoption changes in
-[`poc_product_governance.md`](poc_product_governance.md), including copying
-`templates/framework_mapping.json` into the POC root,
-complete it from authoritative framework sources, and validate it against the
-bundled schema. Reference each mapping ID from the product brief, RCM narrative,
-and evidence contract as described in
-[`framework_mapping_governance.md`](framework_mapping_governance.md).
+`v0.3.0` or later. Follow the six adoption changes in
+[`poc_product_governance.md`](poc_product_governance.md), including completing
+one `docs/poc_product_profile.md` and referencing its mapping IDs in detailed
+RCM and evidence documentation. Use
+[`framework_mapping_governance.md`](framework_mapping_governance.md) only when
+a real implementation needs a separate machine-readable mapping.

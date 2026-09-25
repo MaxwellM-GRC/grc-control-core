@@ -9,7 +9,7 @@ are defined in the [portfolio glossary](docs/glossary.md).
 
 This repository is the distribution source. **The package is not published to
 PyPI.** Portfolio repositories consume a reviewed GitHub release tag such as
-`v0.2.1`.
+`v0.3.0`.
 
 ## What belongs here
 
@@ -39,31 +39,27 @@ library from becoming an opaque policy engine.
 
 The core repository also maintains reusable templates for portfolio governance.
 They are not part of the installed Python package or a POC's evidence package.
-Each POC completes its own copy so its product owner, adopting function,
-company operating model, assumptions, and success metrics remain reviewable in
-that POC. The locked standard uses exactly four artifacts; see the
-[lean POC product-governance guide](docs/poc_product_governance.md) and its
-[product brief](templates/poc_product_brief.md),
-[framework mapping](templates/framework_mapping.json),
-[Requirements & Risk Profile](templates/requirements_risk_profile.md), and
-[decision log](templates/decision_log.md) templates. The
+Each POC completes one [product profile](templates/poc_product_profile.md) so
+its product owner, value, framework fit, operating model, material risks,
+success metrics, and decisions are reviewable in about five minutes. See the
+[lean POC product-governance guide](docs/poc_product_governance.md). Detailed
+RCM and evidence documents remain separate technical references. The optional
 [framework-mapping governance guide](docs/framework_mapping_governance.md)
-defines how the brief, detailed RCM/evidence documentation, and canonical
-mapping remain aligned.
+applies when a real implementation needs machine-readable exchange.
 
 ## Install from a pinned GitHub release
 
 Add this exact line to a POC's `requirements.txt`:
 
 ```text
-grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.2.1
+grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.3.0
 ```
 
 Or add the same direct reference to `project.dependencies` in `pyproject.toml`:
 
 ```toml
 dependencies = [
-  "grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.2.1",
+  "grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.3.0",
 ]
 ```
 
@@ -111,11 +107,11 @@ approver, an approval timestamp, and an explicit assertion of human approval.
 
 ## Supported contract
 
-Release `v0.2.1` supports:
+Release `v0.3.0` supports:
 
 | Package | Schema family | Python | Portfolio catalog |
 |---|---|---|---|
-| `0.2.x` | `1.x` | 3.10–3.13 | `1.0.0` |
+| `0.3.x` | `1.x` | 3.10–3.13 | `1.0.0` |
 
 The implementation is governed by the portfolio's `docs/control_catalog.yaml`
 and `docs/control_language_standard.md`; human facing prose follows

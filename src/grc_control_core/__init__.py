@@ -38,7 +38,7 @@ from .render import render_case_markdown, render_findings_csv, render_json
 from .schema import SCHEMAS, load_schema
 from .severity import Severity, highest_severity, meets_threshold, severity_counts
 
-__version__ = "0.2.1"
+__version__ = "0.3.0"
 
 __all__ = [
     "SCHEMA_VERSION",

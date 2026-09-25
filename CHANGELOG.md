@@ -2,6 +2,15 @@
 
 All notable changes are documented here. This project follows Semantic Versioning.
 
+## 0.3.0 - 2026-09-25
+
+- Consolidate the four POC product-governance artifacts into one five-minute
+  `docs/poc_product_profile.md` review.
+- Retain value, framework mapping, requirements and risks, proof planning, and
+  material decisions while removing duplicate documentation overhead.
+- Make the structured JSON framework mapping optional for production exchange
+  rather than mandatory for portfolio POCs.
+
 ## 0.2.1 - 2026-09-25
 
 - Lock the lean POC governance standard to four core artifacts and six
