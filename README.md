@@ -9,7 +9,7 @@ are defined in the [portfolio glossary](docs/glossary.md).
 
 This repository is the distribution source. **The package is not published to
 PyPI.** Portfolio repositories consume a reviewed GitHub release tag such as
-`v0.1.0`.
+`v0.2.1`.
 
 ## What belongs here
 
@@ -41,8 +41,12 @@ The core repository also maintains reusable templates for portfolio governance.
 They are not part of the installed Python package or a POC's evidence package.
 Each POC completes its own copy so its product owner, adopting function,
 company operating model, assumptions, and success metrics remain reviewable in
-that POC. Start with [the POC product brief template](templates/poc_product_brief.md)
-and [framework-mapping template](templates/framework_mapping.json). The
+that POC. The locked standard uses exactly four artifacts; see the
+[lean POC product-governance guide](docs/poc_product_governance.md) and its
+[product brief](templates/poc_product_brief.md),
+[framework mapping](templates/framework_mapping.json),
+[Requirements & Risk Profile](templates/requirements_risk_profile.md), and
+[decision log](templates/decision_log.md) templates. The
 [framework-mapping governance guide](docs/framework_mapping_governance.md)
 defines how the brief, detailed RCM/evidence documentation, and canonical
 mapping remain aligned.
@@ -52,14 +56,14 @@ mapping remain aligned.
 Add this exact line to a POC's `requirements.txt`:
 
 ```text
-grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.1.0
+grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.2.1
 ```
 
 Or add the same direct reference to `project.dependencies` in `pyproject.toml`:
 
 ```toml
 dependencies = [
-  "grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.1.0",
+  "grc-control-core @ git+https://github.com/MaxwellM-GRC/grc-control-core.git@v0.2.1",
 ]
 ```
 
@@ -107,7 +111,7 @@ approver, an approval timestamp, and an explicit assertion of human approval.
 
 ## Supported contract
 
-Release `v0.1.0` supports:
+Release `v0.2.1` supports:
 
 | Package | Schema family | Python | Portfolio catalog |
 |---|---|---|---|

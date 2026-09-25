@@ -2,6 +2,14 @@
 
 All notable changes are documented here. This project follows Semantic Versioning.
 
+## 0.2.1 - 2026-09-25
+
+- Lock the lean POC governance standard to four core artifacts and six
+  structural adoption changes.
+- Add shared Requirements & Risk Profile and decision-log templates.
+- Keep the company operating model and proof plan inside the one-page product
+  brief rather than requiring separate documents.
+
 ## 0.2.0 - 2026-09-22
 
 - Add a versioned framework-mapping schema and canonical POC mapping template.
